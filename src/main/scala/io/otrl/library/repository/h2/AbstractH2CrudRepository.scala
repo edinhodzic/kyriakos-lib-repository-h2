@@ -10,7 +10,7 @@ import scala.language.postfixOps
 import scala.util.{Success, Try}
 
 abstract class AbstractH2CrudRepository[T <: Identifiable](implicit manifest: Manifest[T])
-  extends AbstractPartialCrudRepository[T] with WholeUpdates[T] with Queryable[T] {
+  extends AbstractPartialCrudRepository[T] with PartialUpdates[T] with Queryable[T] {
 
   protected val logger: Logger = LoggerFactory getLogger getClass
 
@@ -29,15 +29,15 @@ abstract class AbstractH2CrudRepository[T <: Identifiable](implicit manifest: Ma
     Success(map.get(resourceId))
   }
 
-  //  override def update(resourceId: String, updatePayload: String): Try[Option[AnyRef]] = {
-  //    logger info s"updating $resourceId $updatePayload"
-  //    throw new UnsupportedOperationException("not yet implemented")
-  //  }
+    override def update(resourceId: String, updatePayload: String): Try[Option[AnyRef]] = {
+      logger info s"updating $resourceId $updatePayload"
+      throw new UnsupportedOperationException("not yet implemented")
+    }
 
-  override def update(resource: T): Try[Option[T]] = {
-    logger info s"updating $resource"
-    throw new UnsupportedOperationException("not yet implemented")
-  }
+//  override def update(resource: T): Try[Option[T]] = {
+//    logger info s"updating $resource"
+//    throw new UnsupportedOperationException("not yet implemented")
+//  }
 
   override def delete(resourceId: String): Try[Option[Unit]] = {
     logger info s"deleting $resourceId"
