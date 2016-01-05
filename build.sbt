@@ -21,3 +21,5 @@ libraryDependencies ++= Seq(
   // database
   "com.hazelcast" % "hazelcast" % "3.5"
 )
+
+publishTo := Some("OTRL" at "https://mvn.otrl.io")
