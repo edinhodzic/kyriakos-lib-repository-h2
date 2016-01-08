@@ -1,8 +1,7 @@
 package io.otrl.library.repository.h2
 
-import com.hazelcast.core.Hazelcast
+import io.otrl.library.crud.{Paginated, PartialCrudOperations, PartialUpdates, Queryable}
 import io.otrl.library.domain.Identifiable
-import io.otrl.library.repository._
 import org.slf4j.{Logger, LoggerFactory}
 
 import scala.collection.mutable.Map
@@ -10,7 +9,7 @@ import scala.language.postfixOps
 import scala.util.{Success, Try}
 
 abstract class AbstractH2CrudRepository[T <: Identifiable](implicit manifest: Manifest[T])
-  extends AbstractPartialCrudRepository[T] with PartialUpdates[T] with Queryable[T] {
+  extends PartialCrudOperations[T] with PartialUpdates[T] with Queryable[T] {
 
   protected val logger: Logger = LoggerFactory getLogger getClass
 
