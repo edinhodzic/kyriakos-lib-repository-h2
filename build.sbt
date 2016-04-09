@@ -8,7 +8,7 @@ version := "0.5.0-SNAPSHOT"
 
 scalaVersion := "2.11.7"
 
-lazy val otrlLibraryRepositoryH2 = project.in(file("."))
+lazy val otrlLibRepoH2 = project.in(file("."))
 
 libraryDependencies ++= Seq(
   // scala
