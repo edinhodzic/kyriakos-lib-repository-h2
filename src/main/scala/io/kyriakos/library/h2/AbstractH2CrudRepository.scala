@@ -1,7 +1,7 @@
-package io.otrl.library.repository.h2
+package io.kyriakos.library.h2
 
-import io.otrl.library.crud.{CrudOperations, Paginated, Queryable}
-import io.otrl.library.domain.Identifiable
+import io.kyriakos.library.crud.{CrudOperations, Paginated, Queryable}
+import io.kyriakos.library.domain.Identifiable
 import org.slf4j.{Logger, LoggerFactory}
 
 import scala.collection.mutable.Map
