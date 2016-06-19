@@ -29,7 +29,7 @@ libraryDependencies ++= Seq(
   "ch.qos.logback" % "logback-classic" % "1.1.3",
   "com.typesafe.scala-logging" % "scala-logging_2.11" % "3.1.0",
   // kyriakos
-  "io.kyriakos.library" % "kyriakos-lib-crud_2.11" % "0.1.0-SNAPSHOT",
+  "io.kyriakos.library" % "kyriakos-lib-crud_2.11" % "1.0.0",
   // database
   "com.hazelcast" % "hazelcast" % "3.5"
 )
