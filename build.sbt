@@ -1,14 +1,24 @@
 import sbt._
+import bintray.Keys._
 
 organization := "io.kyriakos.library"
 
 name := "kyriakos-lib-repository-h2"
 
-version := "0.5.0-SNAPSHOT"
+version := "1.0.0"
 
 scalaVersion := "2.11.7"
 
-lazy val kyriakosLibRepoH2 = project.in(file("."))
+lazy val kyriakosLibRepoH2 = project.in(file(".")).
+  settings(bintrayPublishSettings: _*).
+    settings(
+      sbtPlugin := true,
+      name := "kyriakos-lib-repository-h2",
+      licenses += ("MIT", url("https://opensource.org/licenses/MIT")),
+      publishMavenStyle := false,
+      repository in bintray := "kyriakos",
+      bintrayOrganization in bintray := None
+    )
 
 libraryDependencies ++= Seq(
   // scala
